@@ -1,6 +1,4 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-
 import {
   Container,
   Header,
@@ -9,7 +7,8 @@ import {
   Photo,
   User,
   UserGreeting,
-  UserName
+  UserName,
+  Icon,
 } from './styles';
 
 const Dashboard: React.FC = () => {
@@ -24,6 +23,7 @@ const Dashboard: React.FC = () => {
                   <UserName>Jordão</UserName>
                 </User>
             </UserInfo>
+            <Icon name="power"/>
           </UserWrapper>
         </Header>
     </Container>
