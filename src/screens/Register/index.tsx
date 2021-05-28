@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Modal } from 'react-native';
-import {CategorySelect} from '../../screens'
-import { Input, Button, TransactionTypeButton, CategorySelectButton } from '../../components/Form'
+import { CategorySelect } from '../../screens';
+import { Input, Button, TransactionTypeButton, CategorySelectButton } from '../../components/Form';
 import { Container, Header, Title, Form, Fields, TransactionTypes } from './styles';
 
 function Register() {
@@ -14,13 +14,16 @@ function Register() {
 
   function handleTransactionTypeSelect(type: 'up'| 'down'){
     setTransactionType(type);
-  }
+  };
+
   function handleOpenSelectCategoryModal(){
     setCategoryModalOpen(true);
-  }
+  };
+
   function handleCloseSelectCategoryModal(){
     setCategoryModalOpen(false);
-  }
+  };
+
   return (
     <Container>
       <Header>
@@ -50,7 +53,7 @@ function Register() {
             />
           </TransactionTypes>
           <CategorySelectButton
-            title="Categoria"
+            title={category.name}
             onPress={handleOpenSelectCategoryModal}
            />
         </Fields>
