@@ -8,7 +8,8 @@ import {Dashboard, Register} from '../screens'
 
 const {Navigator, Screen} = createBottomTabNavigator()
 export function AppRoutes(){
-  const theme = useTheme()
+  const theme = useTheme();
+  
   return(
     <Navigator
       tabBarOptions={{
