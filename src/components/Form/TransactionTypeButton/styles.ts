@@ -12,6 +12,7 @@ interface ContainerProps {
   type:'up' | 'down';
 }
 
+
 export const Container = styled(TouchableOpacity)<ContainerProps>`
   width:48%;
 
