@@ -34,7 +34,6 @@ const schema = Yup.object().shape({
 function Register() {
   const [transactionType, setTransactionType] = useState('');
   const [categoryModalOpen, setCategoryModalOpen] = useState(false);
-
   const dataKey = '@gofinances:transactions';
 
   const [category, setCategory] = useState({
@@ -109,6 +108,7 @@ function Register() {
       console.log(JSON.parse(data!));
     }
     loadData()
+   
   },[])
 
   return (
