@@ -60,7 +60,7 @@ function Resume() {
   }
   const {user} = useAuth()
   async function loadData(){
-    // setIsLoading(true)
+    setIsLoading(true)
     const dataKey = `@gofinances:transactions_${user.id}`;
     const response = await AsyncStorage.getItem(dataKey);
     const responseFormatted = response ? JSON.parse(response) : [];
