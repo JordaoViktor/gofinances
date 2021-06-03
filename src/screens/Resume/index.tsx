@@ -8,7 +8,7 @@ import { useFocusEffect} from '@react-navigation/native'
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
 import {addMonths, subMonths, format} from 'date-fns'
 import {ptBR} from 'date-fns/locale'
-
+import {useAuth} from '../../hooks/auth';
 import { categories } from '../../Utils/categories';
 import { RFValue } from 'react-native-responsive-fontsize';
 import {
@@ -60,7 +60,8 @@ function Resume() {
   }
   async function loadData(){
     setIsLoading(true)
-    const dataKey = '@gofinances:transactions';
+    const {user} = useAuth()
+    const dataKey = `@gofinances:transactions_${user.id}`;
     const response = await AsyncStorage.getItem(dataKey);
     const responseFormatted = response ? JSON.parse(response) : [];
 
