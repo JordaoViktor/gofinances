@@ -64,5 +64,3 @@ export function AppRoutes(){
     </Navigator>
   )
 }
-
-export default AppRoutes;
