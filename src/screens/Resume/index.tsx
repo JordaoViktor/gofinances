@@ -1,11 +1,16 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {VictoryPie} from 'victory-native';
-import {ActivityIndicator} from 'react-native';
-import {HistoryCard} from '../../components';
-import {useTheme } from 'styled-components/native';
+import { ActivityIndicator } from 'react-native';
+import { HistoryCard } from '../../components';
+import { useTheme } from 'styled-components/native';
+import { useFocusEffect} from '@react-navigation/native'
+import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
 import {addMonths, subMonths, format} from 'date-fns'
 import {ptBR} from 'date-fns/locale'
+
+import { categories } from '../../Utils/categories';
+import { RFValue } from 'react-native-responsive-fontsize';
 import {
   Container,
   Header,
@@ -18,11 +23,7 @@ import {
   Month,
   LoadingContainer,
  } from './styles';
- import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs'
-import { categories } from '../../Utils/categories';
-import { useFocusEffect} from '@react-navigation/native'
-import { RFValue } from 'react-native-responsive-fontsize';
-
+ 
 interface TransactionData {
   type: 'positive' | 'negative';
   name: string;
